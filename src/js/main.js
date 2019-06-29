@@ -11,6 +11,14 @@ AlbumElement.style = 'margin-right : 50px';
 
 // if select album and show album detail
 var getDetail = function(albumid){
+  /* Why I still use XHR instead of the Fetch API???
+      fetch is a failed promise
+      the simplicity of the fetch falls apart 
+      pretty quickly once you start dealing with error handling.
+      fetch() works in all modern browsers, 
+      but has no IE support, only works in Safari 10 and up,
+      and Edge support starts at 14.
+  */
   var r = new XMLHttpRequest();
   r.open('GET', 'https://jsonplaceholder.typicode.com/albums/' + albumid + '/photos', true);
   r.onreadystatechange = function () {
