@@ -1,14 +1,33 @@
-Express App
+Express Mvc App
+[![Build Status](https://travis-ci.org/enesfurkangenc/express-mvc-app.svg?branch=master)](https://travis-ci.org/enesfurkangenc/express-mvc-app)
 
-Proje gereklilikleri
+## Installation
+
+This is a [Node.js](https://nodejs.org/en/) module available through the
+[npm registry](https://www.npmjs.com/).
+
+Before installing, [download and install Node.js](https://nodejs.org/en/download/).
+Node.js 0.10 or higher is required.
+
+Installation is done using the
+[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+
+## Quick Start
+
+Install the executable.
 
 ```bash
-npm install -g gulp
+$ npm install -g gulp
 ```
 
-### Proje başlangıç komutları
+Install dependencies:
 
 ```bash
 $ npm install
+```
+
+Start the server:
+
+```bash
 $ npm start
 ```
