@@ -1,52 +1,52 @@
 //load Gulp
-const { src, dest, task, watch, series, parallel } = require('gulp');
+var { src, dest, task, watch, series, parallel } = require('gulp');
 
 //CSS plugins
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const concat = require('gulp-concat');
-const cleanCSS = require('gulp-clean-css');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var cleanCSS = require('gulp-clean-css');
 
 //JS plugins
-const uglify = require('gulp-uglify');
-const babelify = require('babelify');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const stripDebug = require('gulp-strip-debug');
+var uglify = require('gulp-uglify');
+var babelify = require('babelify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var stripDebug = require('gulp-strip-debug');
 
 //Utility plugins
-const nodemon = require('gulp-nodemon');
-const plumber = require('gulp-plumber');
-const rename = require('gulp-rename');
-const wait = require('gulp-wait');
-const sourcemaps = require('gulp-sourcemaps');
-const notify = require('gulp-notify');
-const options = require('gulp-options');
-const gulpif = require('gulp-if');
-const del = require('del');
+var nodemon = require('gulp-nodemon');
+var plumber = require('gulp-plumber');
+var rename = require('gulp-rename');
+var wait = require('gulp-wait');
+var sourcemaps = require('gulp-sourcemaps');
+var notify = require('gulp-notify');
+var options = require('gulp-options');
+var gulpif = require('gulp-if');
+var del = require('del');
 
 //Browser plugins
-const bs = require('browser-sync').create();
+var bs = require('browser-sync').create();
 
 //Project Variables
-const styleSRCDir = './src/scss/**/*.scss';
-const styleBundle = './src/scss/style.scss';
-const styleDist = './public/stylesheets/';
-const mapURL = './';
+var styleSRCDir = './src/scss/**/*.scss';
+var styleBundle = './src/scss/style.scss';
+var styleDist = './public/stylesheets/';
+var mapURL = './';
 
-const jsSRC = './src/js/';
-const jsFront = 'main.js';
-const jsFiles = [jsFront];
-const jsDist = './public/javascripts/';
+var jsSRC = './src/js/';
+var jsFront = 'main.js';
+var jsFiles = [jsFront];
+var jsDist = './public/javascripts/';
 
-const htmlSRC = (['views/**/*.pug', 'views/**/*.html']);
-const htmlURL = '';
+var htmlSRC = (['views/**/*.pug', 'views/**/*.html']);
+var htmlURL = '';
 
 //Watch variables 
-const styleWatch = './src/scss/**/*.scss';
-const jsWatch = './src/js/**/*.js';
-const htmlWatch = './views/**/*.*';
+var styleWatch = './src/scss/**/*.scss';
+var jsWatch = './src/js/**/*.js';
+var htmlWatch = './views/**/*.*';
 
 //Tasks
 function callNodemon(cb) {
@@ -95,8 +95,8 @@ function reload(done) {
 }
 
 function delSweep() {
-  (async () => {
-    const deletedPaths = await del(['src/scss/bundle.css', 'public/stylesheets/style.min.css'],
+  (function() {
+    var deletedPaths = del(['src/scss/bundle.css', 'public/stylesheets/style.min.css'],
       {
         dryRun: false
       });
@@ -155,7 +155,7 @@ function js(done) {
       }))
       .pipe(uglify())
       .pipe(sourcemaps.write('.'))
-      .pipe(dest(jsDist))
+      .pipe(dest(jsDist));
   });
   done();
 }
