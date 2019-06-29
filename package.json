@@ -1,0 +1,67 @@
+{
+  "name": "express-mvc-app",
+  "version": "1.0.0",
+  "description": "express.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "gulp",
+    "startheroku": "node ./bin/www",
+    "build": "gulp build",
+    "test": "mocha --recursive --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enesfurkangenc/express-mvc-app.git"
+  },
+  "author": "Enes GENC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enesfurkangenc/express-mvc-app/issues"
+  },
+  "homepage": "https://github.com/enesfurkangenc/express-mvc-app#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "express-session": "^1.16.2",
+    "morgan": "^1.9.1",
+    "pug": "~2.0.0-beta11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.3",
+    "browserify": "^16.2.3",
+    "browserify-shim": "^3.8.14",
+    "chai": "^4.2.0",
+    "debug": "^4.1.1",
+    "del": "^4.1.1",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-notify": "^3.0.0",
+    "gulp-options": "^1.1.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wait": "0.0.2",
+    "mocha": "^6.1.4",
+    "serve-favicon": "^2.5.0",
+    "supertest": "^4.0.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}

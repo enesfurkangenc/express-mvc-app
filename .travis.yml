@@ -1,0 +1,13 @@
+language: node_js
+sudo: required
+cache:
+  directories:
+    - node_modules
+  npm: true
+node_js:
+  - stable
+before_install:
+  - npm install -g node-gyp
+  - npm install -g gulp-cli
+script:
+  - npm run test

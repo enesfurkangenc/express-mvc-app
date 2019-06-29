@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1(class='head') My Albums and Photos
+    div(class='row', id='list-row')
+        div(class='col-sm-4')
+            ul#albumlist(class='album-ul')
+                each val in data
+                    button(class='album-li', id=val.id)=val.title
+        div(class='col-sm-8', id='list-image')
+
+    div(class='row', id='thumb-image-row')
+        div(class='col-sm-12', id='thumb-image-col')
+            img#thumb-image
