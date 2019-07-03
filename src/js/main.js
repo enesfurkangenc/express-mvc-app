@@ -1,3 +1,7 @@
+// import './category-list-item/category-list-item.js';
+require('./category-list-item/category-list-item.js');
+
+
 var btn = document.getElementsByClassName('album-li');
 
 for(var i=0; i<btn.length; i++){
@@ -31,13 +35,12 @@ var getDetail = function(albumid){
     row.appendChild(col);
     col.innerHTML = '';
     data.forEach(element => {
-      var img = document.createElement('img');
-      img.src = element.thumbnailUrl;
-      img.className = 'image';
-      img.addEventListener('click', function() {
+      var el = document.createElement('category-list-item');
+      el.article = element;
+      col.appendChild(el);
+      el.addEventListener('click', function() {
         showBigPicture(element.url);
       });
-      col.appendChild(img);
     });
   };
   r.send();
