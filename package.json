@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/enesfurkangenc/express-mvc-app#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
